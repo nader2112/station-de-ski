@@ -2,6 +2,7 @@ package tn.esprit.infini.stationdeski.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table( name = "Moniteur")
@@ -13,6 +14,9 @@ public class Moniteur implements Serializable  {
     private String nomM;
     private String prenomM;
     private Date dateRecru;
+
+    @OneToMany
+    private Set<Cours> cours;
 
 
 }

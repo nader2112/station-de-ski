@@ -1,6 +1,7 @@
 package tn.esprit.infini.stationdeski.entities;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table( name = "Cours")
@@ -16,5 +17,8 @@ public class Cours implements Serializable {
     private Support Support;
     private float prix;
     private Integer creneau;
+
+    @OneToMany( mappedBy="cours")
+    private Set<Inscription> inscriptions;
 
 }
